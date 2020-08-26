@@ -1,0 +1,341 @@
+(saveFormat "7.0")
+(date "Tue 25/Aug/2020 09:33:39 ")
+(veerev "9.32.17704.1")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M.8 M.4 M)
+(sysconfig
+(iodevice "PNA"
+(type GPIB-VISA)
+(channel 130)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(ppAddr "GPIB0::16::INSTR")
+(ScpiFileName "pna.xml")
+(model "")
+(eoiEnabled 1)
+(VISAddr "GPIB0::16::INSTR")
+(model ""
+(standard 488))))
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 12)
+(popupTitleText "Untitled")
+(popupMoveable 1)
+(deleteGlobals 0))
+(deviceList
+(device 0 CONFIRM25
+(properties
+(name "RF vswr help")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 4 CONTEXT
+(properties
+(name "RF_VSWR")
+(variableScope cont)
+(trigMode deg)
+(nextID 3)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(deviceList
+(device 0 PICTURE
+(properties
+(variableScope cont)
+(pictureImage
+"C:\\Users\\sapplen\\Documents\\vswr checkin ver2\\N12-3541 RF VSWR Test SetUp.jpg"
+)))
+(device 1 CONFIRM25
+(properties
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 2 EXITTHREAD
+(properties
+(variableScope cont)))
+(configuration
+(connect D0:0 D1:0)
+(connect D1:0 D2:0))
+(ShowOnExecPanel
+(relativeOrigin 363 98)))
+(contextCarrier
+(wndOrigin 142 142)
+(wndState res)
+(active panel)
+(panel
+(extent 695 379)
+(drawGrid "on")
+(widget 0 detail
+(relativeOrigin 0 0)
+(PID 0)
+(title off)
+(tabStop off)
+(tabIndex 0)
+(borderStyle flat)
+(extent 693 377)
+(pictureMode actual))
+(widget 1 detail
+(relativeOrigin 0 0)
+(bg "Green")
+(PID 1)
+(title off)
+(tabIndex 1)
+(borderStyle none)
+(extent 47 22)))
+(detail
+(extent 830 632)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(extent 42 15))
+(open
+(extent 693 377)
+(pictureMode actual))
+(pinCenter 410 270))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 47 22))
+(title off)
+(pinCenter 430 500))
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 67 15))
+(open)
+(terminals on)
+(pinCenter 440 560))
+(connect D0:0 D1:0
+(points 4 410 461 410 300 430 300 430 486))
+(connect D1:0 D2:0
+(points 4 430 513 430 530 440 530 440 550)))
+(stackingOrder 2 0 1))))
+(device 8 THREADOBJECT
+(properties
+(name "Test_Port")
+(variableScope cont)
+(trigMode deg)
+(nextID 3)
+(popupTitleText "ThreadObject")
+(popupMoveable 1)
+(processor 1)
+(manualAllocateProcNo 0)
+(threadpriority normal))
+(deviceList
+(device 0 PICTURE
+(properties
+(variableScope cont)
+(pictureImage
+"C:\\Users\\sapplen\\Documents\\vswr checkin ver2\\N12-3541 J6 Test Port VSWR, Insertion & Switch Isolation Test SetUp.jpg"
+)))
+(device 1 CONFIRM25
+(properties
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 2 EXITTHREAD
+(properties
+(variableScope cont)))
+(configuration
+(connect D0:0 D1:0)
+(connect D1:0 D2:0))
+(ShowOnExecPanel
+(relativeOrigin 237 92)))
+(contextCarrier
+(wndOrigin 285 242)
+(wndState res)
+(active panel)
+(panel
+(extent 693 380)
+(drawGrid "on")
+(widget 0 detail
+(relativeOrigin 0 0)
+(PID 0)
+(title off)
+(tabStop off)
+(tabIndex 0)
+(borderStyle flat)
+(extent 693 377)
+(pictureMode actual))
+(widget 1 detail
+(relativeOrigin 0 0)
+(bg "Green")
+(PID 1)
+(title off)
+(tabIndex 1)
+(borderStyle none)
+(extent 47 22)))
+(detail
+(extent 830 585)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon)
+(open
+(extent 693 377)
+(pictureMode actual))
+(pinCenter 990 320))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 47 22))
+(title off)
+(pinCenter 420 510))
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 67 15))
+(open)
+(terminals on)
+(pinCenter 430 570))
+(connect D0:0 D1:0
+(points 6 990 511 990 530 620 530 620 480 420 480 420 496))
+(connect D1:0 D2:0
+(points 4 420 523 420 540 430 540 430 560)))
+(stackingOrder 2 0 1))))
+(device 9 START25
+(properties
+(variableScope cont)))
+(device 10 CONFIRM25
+(properties
+(name "Test Port")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(configuration
+(connect D3:0 D0:0)
+(connect D0:0 D1:0)
+(connect D4:0 D2:0)
+(connect D3:0 D4:0))
+(ShowOnExecPanel))
+(contextCarrier
+(wndOrigin -7 511)
+(wndState res)
+(active detail)
+(panel
+(extent 1365 600)
+(drawGrid "on")
+(widget 3 detail
+(relativeOrigin 530 120)
+(PID 0)
+(title off)
+(tabIndex 0)
+(borderStyle none)
+(extent 47 22))
+(widget 0 detail
+(relativeOrigin 290 320)
+(PID 1)
+(title off)
+(tabIndex 1)
+(borderStyle none)
+(extent 47 22))
+(widget 4 detail
+(relativeOrigin 910 250)
+(PID 2)
+(title off)
+(tabIndex 2)
+(borderStyle none)
+(extent 47 22)))
+(detail
+(extent 1365 600)
+(anchorPt 8 1)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(extent 78 0))
+(open
+(extent 47 22))
+(title off)
+(pinCenter 300 330))
+(devCarrierFor 4
+(active icon)
+(icon
+(extent 63 15))
+(open
+(extent 890 632)
+(carbonCopy))
+(terminals on)
+(pinCenter 310 420))
+(devCarrierFor 8
+(active icon)
+(icon
+(extent 57 15))
+(open
+(extent 890 585)
+(carbonCopy))
+(terminals on)
+(pinCenter 910 330))
+(devCarrierFor 9
+(active open)
+(icon)
+(open
+(extent 47 22))
+(title off)
+(pinCenter 540 130))
+(devCarrierFor 10
+(active open)
+(icon
+(extent 52 0))
+(open
+(extent 47 22))
+(title off)
+(pinCenter 920 260))
+(connect D3:0 D0:0
+(points 4 540 143 540 160 300 160 300 316))
+(connect D0:0 D1:0
+(points 4 300 343 300 360 310 360 310 410))
+(connect D4:0 D2:0
+(points 4 920 273 920 290 910 290 910 320))
+(connect D3:0 D4:0
+(points 4 540 143 540 170 920 170 920 246)))
+(stackingOrder 3 0 4 2 1))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))

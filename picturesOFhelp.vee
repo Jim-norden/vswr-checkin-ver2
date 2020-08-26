@@ -1,0 +1,486 @@
+(saveFormat "7.0")
+(date "Tue 25/Aug/2020 10:46:07 ")
+(veerev "9.32.17704.1")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M.4 M.13 M M.15 M.15.0)
+(sysconfig
+(iodevice "PNA"
+(type GPIB-VISA)
+(channel 130)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(ppAddr "GPIB0::16::INSTR")
+(ScpiFileName "pna.xml")
+(model "")
+(eoiEnabled 1)
+(VISAddr "GPIB0::16::INSTR")
+(model ""
+(standard 488))))
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 16)
+(popupTitleText "Untitled")
+(popupMoveable 1)
+(deleteGlobals 0))
+(deviceList
+(device 0 CONFIRM25
+(properties
+(name "RF vswr Help")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 4 CONTEXT
+(properties
+(name "RF_VSWR_Help")
+(variableScope cont)
+(trigMode deg)
+(nextID 3)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(deviceList
+(device 0 PICTURE
+(properties
+(variableScope cont)
+(pictureImage
+"C:\\Users\\sapplen\\Documents\\vswr checkin ver2\\N12-3541 RF VSWR Test SetUp.jpg"
+)))
+(device 1 CONFIRM25
+(properties
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 2 EXITTHREAD
+(properties
+(variableScope cont)))
+(configuration
+(connect D0:0 D1:0)
+(connect D1:0 D2:0))
+(ShowOnExecPanel
+(relativeOrigin 363 98)))
+(contextCarrier
+(wndOrigin 22 90)
+(wndState res)
+(active detail)
+(panel
+(extent 695 379)
+(drawGrid "on")
+(widget 0 detail
+(relativeOrigin 0 0)
+(PID 0)
+(title off)
+(tabStop off)
+(tabIndex 0)
+(borderStyle flat)
+(extent 693 377)
+(pictureMode actual))
+(widget 1 detail
+(relativeOrigin 0 0)
+(bg "Green")
+(PID 1)
+(title off)
+(tabIndex 1)
+(borderStyle none)
+(extent 47 22)))
+(detail
+(extent 830 632)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(extent 42 15))
+(open
+(extent 693 377)
+(pictureMode actual))
+(pinCenter 410 270))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 47 22))
+(title off)
+(pinCenter 430 500))
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 67 15))
+(open)
+(terminals on)
+(pinCenter 440 560))
+(connect D0:0 D1:0
+(points 4 410 461 410 300 430 300 430 486))
+(connect D1:0 D2:0
+(points 4 430 513 430 530 440 530 440 550)))
+(stackingOrder 2 0 1))))
+(device 9 START25
+(properties
+(variableScope cont)))
+(device 10 CONFIRM25
+(properties
+(name "Test Port Help")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 13 CONTEXT
+(properties
+(name "IF_VSWR_Help")
+(variableScope cont)
+(trigMode deg)
+(nextID 2)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(deviceList
+(device 0 PICTURE
+(properties
+(name "IF vswr Help")
+(variableScope cont)
+(pictureImage
+"C:\\Users\\sapplen\\Documents\\vswr checkin ver2\\N12-3541 IF J7 VSWR Test SetUp.jpg"
+)))
+(device 1 CONFIRM25
+(properties
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(configuration
+(connect D0:0 D1:0))
+(ShowOnExecPanel
+(relativeOrigin 396 223)))
+(contextCarrier
+(wndOrigin 202 202)
+(wndState res)
+(active detail)
+(panel
+(extent 672 382)
+(drawGrid "on")
+(widget 0 detail
+(relativeOrigin 0 0)
+(PID 0)
+(title off)
+(tabStop off)
+(tabIndex 0)
+(borderStyle flat)
+(extent 671 380)
+(pictureMode actual))
+(widget 1 detail
+(relativeOrigin 0 0)
+(bg "Green")
+(PID 1)
+(title off)
+(tabIndex 1)
+(borderStyle none)
+(extent 47 22)))
+(detail
+(extent 808 526)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(extent 73 0))
+(open
+(extent 671 380)
+(pictureMode actual))
+(pinCenter 400 270))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 47 22))
+(title off)
+(pinCenter 400 500))
+(connect D0:0 D1:0
+(points 2 400 462 400 486)))
+(stackingOrder 0 1))))
+(device 14 CONFIRM25
+(properties
+(name "IF vswr Help")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 15 CONTEXT
+(properties
+(name "Test_Port_Help")
+(variableScope cont)
+(trigMode deg)
+(nextID 1)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(deviceList
+(device 0 THREADOBJECT
+(properties
+(name "Test_Port_Help")
+(variableScope cont)
+(trigMode deg)
+(nextID 3)
+(popupTitleText "ThreadObject")
+(popupMoveable 1)
+(processor 1)
+(manualAllocateProcNo 0)
+(threadpriority normal))
+(deviceList
+(device 0 PICTURE
+(properties
+(variableScope cont)
+(pictureImage
+"C:\\Users\\sapplen\\Documents\\vswr checkin ver2\\N12-3541 J6 Test Port VSWR, Insertion & Switch Isolation Test SetUp.jpg"
+)))
+(device 1 CONFIRM25
+(properties
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 2 EXITTHREAD
+(properties
+(variableScope cont)))
+(configuration
+(connect D0:0 D1:0)
+(connect D1:0 D2:0))
+(ShowOnExecPanel
+(relativeOrigin 237 92)))
+(contextCarrier
+(wndOrigin 160 102)
+(wndState res)
+(active detail)
+(panel
+(extent 693 380)
+(drawGrid "on")
+(widget 0 detail
+(relativeOrigin 0 0)
+(PID 0)
+(title off)
+(tabStop off)
+(tabIndex 0)
+(borderStyle flat)
+(extent 693 377)
+(pictureMode actual))
+(widget 1 detail
+(relativeOrigin 0 0)
+(bg "Green")
+(PID 1)
+(title off)
+(tabIndex 1)
+(borderStyle none)
+(extent 47 22)))
+(detail
+(extent 830 585)
+(anchorPt -364 -88)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon)
+(open
+(extent 693 377)
+(pictureMode actual))
+(pinCenter 990 320))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 47 22))
+(title off)
+(pinCenter 420 510))
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 67 15))
+(open)
+(terminals on)
+(pinCenter 430 570))
+(connect D0:0 D1:0
+(points 6 990 511 990 530 620 530 620 480 420 480 420 496))
+(connect D1:0 D2:0
+(points 4 420 523 420 540 430 540 430 560)))
+(stackingOrder 2 0 1))))
+(configuration))
+(contextCarrier
+(wndOrigin 792 415)
+(wndState res)
+(active detail)
+(detail
+(extent 230 143)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active icon)
+(icon
+(extent 93 15))
+(open
+(extent 890 585)
+(carbonCopy))
+(terminals on)
+(pinCenter 110 70))))))
+(configuration
+(connect D2:0 D0:0)
+(connect D0:0 D1:0)
+(connect D2:0 D3:0)
+(connect D5:0 D4:0)
+(connect D2:0 D5:0)
+(connect D3:0 D6:0))
+(ShowOnExecPanel))
+(contextCarrier
+(wndOrigin 4 12)
+(wndState res)
+(active detail)
+(panel
+(extent 1365 600)
+(drawGrid "on")
+(widget 2 detail
+(relativeOrigin 530 120)
+(PID 0)
+(title off)
+(tabIndex 0)
+(borderStyle none)
+(extent 47 22))
+(widget 0 detail
+(relativeOrigin 290 320)
+(PID 1)
+(title off)
+(tabIndex 1)
+(borderStyle none)
+(extent 81 22))
+(widget 3 detail
+(relativeOrigin 910 250)
+(PID 2)
+(title off)
+(tabIndex 2)
+(borderStyle none)
+(extent 85 22))
+(widget 5 detail
+(relativeOrigin 560 230)
+(PID 3)
+(title off)
+(tabIndex 3)
+(borderStyle none)
+(extent 70 20)))
+(detail
+(extent 1365 600)
+(anchorPt 13 1)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(extent 80 0))
+(open
+(extent 47 22))
+(title off)
+(pinCenter 300 330))
+(devCarrierFor 4
+(active icon)
+(icon
+(extent 100 15))
+(open
+(extent 890 632)
+(carbonCopy))
+(terminals on)
+(pinCenter 330 420))
+(devCarrierFor 9
+(active open)
+(icon)
+(open
+(extent 47 22))
+(title off)
+(pinCenter 540 130))
+(devCarrierFor 10
+(active open)
+(icon
+(extent 84 0))
+(open
+(extent 47 22))
+(title off)
+(pinCenter 920 260))
+(devCarrierFor 13
+(active icon)
+(icon
+(extent 93 15))
+(open
+(extent 868 526)
+(carbonCopy))
+(terminals on)
+(pinCenter 680 270))
+(devCarrierFor 14
+(active open)
+(icon
+(extent 73 0))
+(open
+(extent 47 22))
+(title off)
+(pinCenter 570 240))
+(devCarrierFor 15
+(active icon)
+(icon
+(extent 93 15))
+(terminals on)
+(pinCenter 930 330))
+(connect D2:0 D0:0
+(points 4 540 143 540 170 300 170 300 316))
+(connect D0:0 D1:0
+(points 4 300 343 300 360 330 360 330 410))
+(connect D2:0 D3:0
+(points 6 540 143 540 160 570 160 570 210 920 210 920 246))
+(connect D5:0 D4:0
+(points 6 570 253 570 270 610 270 610 240 680 240 680 260))
+(connect D2:0 D5:0
+(points 4 540 143 540 160 570 160 570 226))
+(connect D3:0 D6:0
+(points 4 920 273 920 290 930 290 930 320)))
+(stackingOrder 2 0 3 5 1 4 6))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))
