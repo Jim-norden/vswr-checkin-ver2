@@ -1,0 +1,40 @@
+ECO 1484 changes summary
+
+ECN#1484_09-11-2020
+added ecn#1484 and updated dates
+
+CS_03550-1D.docx
+
+
+
+
+ATP
+sheet : topic : mod/added
+20	: 6.10.3 Test Port Switch On / Off Isolation  : 6.10.3.4.5 pointer to AppendixA sec 6.7
+
+21	: 6.11.1 IF(Output) Port (J7) VSWR 	: 6.11.1.4.8 pointer to automation in appenA sec6.7
+
+FI 23  : 6.11.2 LO Port J5 VSWR  :  future improvement manual entry LO vswr
+ ??? 23	: replace Figure 6.11.3 RF Port VSWR Test Set-Up with one with dotted lines and no "NC"
+
+24	: 6.11.3 RF Ports (J1 – J4) VSWR 	: 6.11.3.4.8 pointer to auto in AppenA sec6.7
+26 	: 6.12	Test Port Insertion Loss	: 6.12.4.6 See appendix ...
+
+FI 26	: 6.13	Input Stop Band 	: future improvement manual entry ISB
+
+95	: Appendix A  6.7 	Automated VSWR, Test Port Insertion Loss & Test Port Isolation Test
+
+FI 95	: 6.7.4 Calibration :  future improvement Write software to check for number of points per sweep and issue error if calibration doesn’t match expected.
+FI 97	: 	screen captures #2 	: future improvement write software to allow technician to enter name and to saver it to list for future use.
+
+99	: screen captures Main menu	: change image with buttons that say "Set-Up" instead of  "Help"
+99	: new screen capture Main menu
+100	: screen captures Calibration and RF vswr	: change title replace "HELP" with "Set-Up"
+100	: new screen capture Calibration
+100	: new screen capture RF
+101	: same thing for Test Port and IF vswr "HELP" use "Set-Up"
+101	: new screen capture J6 test port
+101	: new screen capture J7 vswr
+
+FI buttons change color after measurement
+

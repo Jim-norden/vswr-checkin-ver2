@@ -1,5 +1,5 @@
 (saveFormat "7.0")
-(date "Tue 25/Aug/2020 16:09:13 ")
+(date "Sat 12/Sep/2020 13:14:22 ")
 (veerev "9.32.17704.1")
 (platform "PC")
 (execMode v6)
@@ -18111,15 +18111,16 @@
 (implementation))
 (device 121 CONTEXT
 (properties
-(name "RF_VSWR_Help")
+(name "RF_VSWR_Set-Up")
 (variableScope cont)
 (trigMode deg)
 (nextID 6)
-(popupTitleText "RF vswr Help")
+(popupTitleText "RF vswr Set-Up")
 (popupMoveable 1))
 (deviceList
 (device 0 PICTURE
 (properties
+(name "RF vswr Set-Up")
 (variableScope cont))
 (interface
 (input 1
@@ -18209,12 +18210,12 @@
 (extent 47 22)))
 (detail
 (extent 638 568)
-(anchorPt -142 70)
+(anchorPt -65 -55)
 (configuration
 (devCarrierFor 0
-(active icon)
+(active open)
 (icon
-(extent 42 15))
+(extent 93 15))
 (open
 (extent 693 377)
 (pictureMode actual))
@@ -18241,17 +18242,17 @@
 (extent 434 56))
 (pinCenter 440 110))
 (connect D2:0 D0:0
-(points 2 420 297 420 380))
+(points 4 420 297 420 338 420 338 420 181))
 (connect D2:1 D0:1
-(points 6 549 270 570 270 570 320 380 320 380 390 396 390))
+(points 6 549 270 570 270 570 320 380 320 380 390 71 390))
 (connect D0:0 D1:0
-(points 2 420 400 420 536))
+(points 4 420 581 420 468 420 468 420 536))
 (connect D3:1 D2:1
 (points 6 659 110 680 110 680 160 270 160 270 270 290 270)))
-(stackingOrder 1 2 0 3))))
+(stackingOrder 1 2 3 0))))
 (device 122 CONFIRM25
 (properties
-(name "RF Ports Help")
+(name "RF Ports Set-Up")
 (variableScope cont)
 (enterButton 0)
 (escapeButton 0)
@@ -18264,16 +18265,16 @@
 (implementation))
 (device 123 CONTEXT
 (properties
-(name "IF_VSWR_Help")
+(name "IF_VSWR_Set-Up")
 (variableScope cont)
 (trigMode deg)
 (nextID 5)
-(popupTitleText "IF vswr Help")
+(popupTitleText "IF vswr Set-Up")
 (popupMoveable 1))
 (deviceList
 (device 0 PICTURE
 (properties
-(name "IF vswr Help")
+(name "IF vswr Set-Up")
 (variableScope cont))
 (interface
 (input 1
@@ -18330,7 +18331,7 @@
 (connect D0:0 D1:0)
 (connect D3:1 D2:1))
 (ShowOnExecPanel
-(relativeOrigin 313 195)))
+(relativeOrigin 427 172)))
 (contextCarrier
 (active detail)
 (panel
@@ -18355,12 +18356,12 @@
 (extent 47 22)))
 (detail
 (extent 808 526)
-(anchorPt 248 267)
+(anchorPt 94 127)
 (configuration
 (devCarrierFor 0
 (active open)
 (icon
-(extent 73 0))
+(extent 86 0))
 (open
 (extent 671 380)
 (pictureMode actual))
@@ -18394,10 +18395,10 @@
 (points 2 400 462 400 486))
 (connect D3:1 D2:1
 (points 6 569 -190 590 -190 590 -140 180 -140 180 -30 200 -30)))
-(stackingOrder 1 0 2 3))))
+(stackingOrder 1 2 3 0))))
 (device 124 CONFIRM25
 (properties
-(name "IF Port Help")
+(name "IF Port Set-Up")
 (variableScope cont)
 (enterButton 0)
 (escapeButton 0)
@@ -18410,7 +18411,7 @@
 (implementation))
 (device 127 CONFIRM25
 (properties
-(name "Test Port Help")
+(name "Test Port Set-Up")
 (variableScope cont)
 (enterButton 0)
 (escapeButton 0)
@@ -18423,16 +18424,16 @@
 (implementation))
 (device 128 CONTEXT
 (properties
-(name "Test_Port_Help")
+(name "Test_Port_Set-Up")
 (variableScope cont)
 (trigMode deg)
 (nextID 5)
-(popupTitleText "Test Port Help")
+(popupTitleText "Test Port Set-Up")
 (popupMoveable 1))
 (deviceList
 (device 0 PICTURE
 (properties
-(name "IF vswr Help")
+(name "IF vswr Set-Up")
 (variableScope cont))
 (interface
 (input 1
@@ -18490,7 +18491,7 @@
 (connect D0:0 D1:0)
 (connect D3:1 D2:1))
 (ShowOnExecPanel
-(relativeOrigin 219 223)))
+(relativeOrigin 477 182)))
 (contextCarrier
 (active detail)
 (panel
@@ -18524,12 +18525,12 @@
 (extent 47 22)))
 (detail
 (extent 808 526)
-(anchorPt 243 430)
+(anchorPt 243 370)
 (configuration
 (devCarrierFor 0
 (active open)
 (icon
-(extent 73 0))
+(extent 86 0))
 (open
 (extent 693 377)
 (pictureMode actual))
@@ -18594,7 +18595,7 @@
 (data  ""))))
 (device 133 CONFIRM25
 (properties
-(name "Calibration Help")
+(name "Calibration Set-Up")
 (variableScope cont)
 (enterButton 0)
 (escapeButton 0)
@@ -18607,11 +18608,11 @@
 (implementation))
 (device 144 CONTEXT
 (properties
-(name "Cal_Help")
+(name "Callibration_Set-Up")
 (variableScope cont)
 (trigMode deg)
 (nextID 3)
-(popupTitleText "Calibration Help")
+(popupTitleText "Calibration Set-Up Instuctions ")
 (popupMoveable 1))
 (deviceList
 (device 0 NOTE
@@ -18635,7 +18636,7 @@
 (implementation))
 (configuration)
 (ShowOnExecPanel
-(relativeOrigin 9 244)))
+(relativeOrigin 9 209)))
 (contextCarrier
 (active panel)
 (panel
@@ -18736,84 +18737,84 @@
 (connect D48:0 D49:0))
 (ShowOnExecPanel))
 (contextCarrier
-(wndOrigin 1 1)
+(wndOrigin 32 29)
 (wndState res)
 (active panel)
 (panel
-(extent 273 579)
+(extent 313 579)
 (drawGrid "on")
 (widget 3 detail
-(relativeOrigin 90 110)
+(relativeOrigin 120 110)
 (PID 4)
 (title off)
 (tabIndex 0)
 (borderStyle none)
 (extent 90 30))
 (widget 0 detail
-(relativeOrigin 90 150)
+(relativeOrigin 120 150)
 (PID 5)
 (title off)
 (tabIndex 1)
 (borderStyle none)
 (extent 90 30))
 (widget 10 detail
-(relativeOrigin 90 190)
+(relativeOrigin 120 190)
 (PID 6)
 (title off)
 (tabIndex 2)
 (borderStyle none)
 (extent 90 30))
 (widget 11 detail
-(relativeOrigin 90 230)
+(relativeOrigin 120 230)
 (PID 7)
 (title off)
 (tabIndex 3)
 (borderStyle none)
 (extent 90 30))
 (widget 15 detail
-(relativeOrigin 90 310)
+(relativeOrigin 120 310)
 (PID 8)
 (title off)
 (tabIndex 4)
 (borderStyle none)
 (extent 90 30))
 (widget 16 detail
-(relativeOrigin 90 270)
+(relativeOrigin 120 270)
 (PID 9)
 (title off)
 (tabIndex 5)
 (borderStyle none)
 (extent 90 30))
 (widget 17 detail
-(relativeOrigin 90 350)
+(relativeOrigin 120 350)
 (PID 10)
 (title off)
 (tabIndex 6)
 (borderStyle none)
 (extent 150 30))
 (widget 18 detail
-(relativeOrigin 90 430)
+(relativeOrigin 120 430)
 (PID 11)
 (title off)
 (tabIndex 7)
 (borderStyle none)
 (extent 150 30))
 (widget 19 detail
-(relativeOrigin 90 390)
+(relativeOrigin 120 390)
 (PID 12)
 (title off)
 (tabIndex 8)
 (borderStyle none)
 (extent 150 30))
 (widget 20 detail
-(relativeOrigin 69 59)
+(relativeOrigin 120 70)
 (PID 13)
 (title off)
 (tabIndex 9)
 (borderStyle none)
 (extent 50 20))
 (widget 25 detail
-(relativeOrigin 90 470)
+(relativeOrigin 120 470)
 (PID 14)
 (title off)
 (tabIndex 10)
@@ -18860,31 +18861,31 @@
 (title off)
 (tabIndex 17)
 (borderStyle none)
-(extent 80 20))
+(extent 105 20))
 (widget 43 detail
 (relativeOrigin 0 390)
 (PID 22)
 (title off)
 (tabIndex 18)
 (borderStyle none)
-(extent 80 20))
+(extent 100 20))
 (widget 44 detail
 (relativeOrigin 0 270)
 (PID 23)
 (title off)
 (tabIndex 19)
 (borderStyle none)
-(extent 80 20))
+(extent 105 20))
 (widget 48 detail
-(relativeOrigin 140 70)
+(relativeOrigin 0 70)
 (PID 24)
 (title off)
 (tabIndex 20)
 (borderStyle none)
-(extent 97 22)))
+(extent 110 20)))
 (detail
 (extent 1789 753)
-(anchorPt -656 170)
+(anchorPt -468 119)
 (configuration
 (devCarrierFor 6
 (active open)
@@ -19184,15 +19185,16 @@
 (devCarrierFor 121
 (active icon)
 (icon
-(extent 100 15))
+(extent 113 15))
 (open
 (extent 890 632)
 (carbonCopy))
 (terminals on)
-(pinCenter 730 310))
+(pinCenter 740 310))
 (devCarrierFor 122
 (active open)
-(icon)
+(icon
+(extent 97 0))
 (open
 (extent 47 22))
 (title off)
@@ -19200,22 +19202,24 @@
 (devCarrierFor 123
 (active icon)
 (icon
-(extent 93 15))
+(extent 106 15))
 (open
 (extent 868 526)
 (carbonCopy))
 (terminals on)
-(pinCenter 870 310))
+(pinCenter 880 310))
 (devCarrierFor 124
 (active open)
-(icon)
+(icon
+(extent 83 0))
 (open
 (extent 47 22))
 (title off)
 (pinCenter 870 250))
 (devCarrierFor 127
 (active open)
-(icon)
+(icon
+(extent 97 0))
 (open
 (extent 47 22))
 (title off)
@@ -19223,12 +19227,12 @@
 (devCarrierFor 128
 (active icon)
 (icon
-(extent 93 15))
+(extent 106 15))
 (open
 (extent 868 526)
 (carbonCopy))
 (terminals on)
-(pinCenter 1010 310))
+(pinCenter 1020 310))
 (devCarrierFor 129
 (active icon)
 (icon
@@ -19246,7 +19250,7 @@
 (devCarrierFor 133
 (active open)
 (icon
-(extent 97 0))
+(extent 111 0))
 (open
 (extent 47 22))
 (title off)
@@ -19254,12 +19258,12 @@
 (devCarrierFor 144
 (active icon)
 (icon
-(extent 57 15))
+(extent 118 15))
 (open
 (extent 872 341)
 (carbonCopy))
 (terminals on)
-(pinCenter 1120 310))
+(pinCenter 1150 310))
 (connect D21:1 D0:0
 (points 7 486 290 510 290 510 240 190 240 190 50 140 50 140 66))
 (connect D21:1 D3:0
@@ -19321,16 +19325,17 @@
 (connect D14:0 D23:9
 (points 7 140 880 140 890 130 890 130 840 -80 840 -80 170 -66 170))
 (connect D40:0 D23:10
-(points 9 730 320 730 350 280 350 280 250 110 250 110 260 -80 260 -80 180 -66
-180))
+(points 9 740 320 740 350 280 350 280 250 110 250 110 260 60 260 60 180 -66 180)
+)
 (connect D42:0 D23:11
-(points 9 870 320 870 360 270 360 270 330 130 330 130 350 -140 350 -140 190 -66
-190))
+(points 9 880 320 880 360 270 360 270 330 130 330 130 350 50 350 50 190 -66 190)
+)
 (connect D45:0 D23:12
-(points 7 1010 320 1010 340 940 340 940 -60 -150 -60 -150 200 -66 200))
+(points 15 1020 320 1020 340 950 340 950 100 280 100 280 110 130 110 130 150 110
+150 110 160 60 160 60 70 -80 70 -80 200 -66 200))
 (connect D49:0 D23:13
-(points 17 1120 320 1120 340 1170 340 1170 100 290 100 290 110 130 110 130 150
-110 150 110 160 70 160 70 240 -70 240 -70 220 -80 220 -80 210 -66 210))
+(points 9 1150 320 1150 370 190 370 190 390 100 390 100 380 -80 380 -80 210 -66
+210))
 (connect D35:0 D24:0
 (points 2 500 560 500 660))
 (connect D21:1 D25:0
@@ -19360,23 +19365,23 @@
 (connect D34:0 D36:0
 (points 2 450 -130 450 -120))
 (connect D41:0 D40:0
-(points 2 730 263 730 300))
+(points 4 730 263 730 280 740 280 740 300))
 (connect D21:1 D41:0
 (points 5 486 290 610 290 610 220 730 220 730 236))
 (connect D43:0 D42:0
-(points 2 870 263 870 300))
+(points 4 870 263 870 280 880 280 880 300))
 (connect D21:1 D43:0
 (points 5 486 290 610 290 610 220 870 220 870 236))
 (connect D21:1 D44:0
 (points 5 486 290 610 290 610 220 1010 220 1010 236))
 (connect D44:0 D45:0
-(points 2 1010 263 1010 300))
+(points 4 1010 263 1010 280 1020 280 1020 300))
 (connect D21:1 D48:0
 (points 5 486 290 610 290 610 220 1120 220 1120 236))
 (connect D48:0 D49:0
-(points 2 1120 263 1120 300)))
+(points 4 1120 263 1120 280 1150 280 1150 300)))
 (stackingOrder 21 20 31 33 1 25 24 8 9 12 13 14 5 6 28 27 37 38 39 3 0 10 11 15
-16 17 18 19 34 7 2 36 43 22 41 44 4 35 26 23 40 42 29 32 47 46 45 48 30 49))
+16 17 18 19 34 7 2 36 22 41 44 4 35 26 23 29 32 47 46 30 48 43 40 45 42 49))
 (numberFormats
 (realFormat standard)
 (realSigDigits 4)
