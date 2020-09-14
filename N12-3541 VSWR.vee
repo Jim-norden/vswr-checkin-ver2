@@ -1,11 +1,11 @@
 (saveFormat "7.0")
-(date "Sat 12/Sep/2020 13:14:22 ")
+(date "Mon 14/Sep/2020 10:25:54 ")
 (veerev "9.32.17704.1")
 (platform "PC")
 (execMode v6)
 (prefExecMode v9)
 (filterNAN 0)
-(workspaceStackingOrder M)
+(workspaceStackingOrder F6 M.81 M.81.40 M)
 (sysconfig
 (iodevice "newInstrument"
 (type GPIB-VISA)
@@ -5678,7 +5678,7 @@
 (variableName ProductionOrDevelopment)
 (variableScope glob)
 (trigMode deg)
-(nextID 54)
+(nextID 56)
 (popupTitleText "UserObject")
 (popupMoveable 1))
 (deviceList
@@ -5843,7 +5843,7 @@
 (lock name constraints)))
 (implementation
 (value Text
-(data  "Prod "))
+(data  "notProduction"))
 (initValue Text
 (data  ""))))
 (device 29 FORMULA
@@ -6013,6 +6013,18 @@
 (text2 1
 "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\r\n{\\colortbl ;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs24\\par\r\nRenamed: N12-3541 VSWR_J6_J7_J1-J4\\par\r\nRelease Date: 2-20-20 Thursday ; working name: hacked RAv200_J6_J7_J1-J4_tests\\par\r\n}\r\n"
 )))
+(device 54 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
+(device 55 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
 (configuration
 (connect D4:0 D2:0)
 (connect D28:1 D2:1)
@@ -6031,12 +6043,18 @@
 (connect D12:1 D21:1)
 (connect D15:0 D24:0)
 (connect D17:0 D25:0)
-(connect D21:1 D26:1)))
+(connect D21:1 D26:1)
+(connect D16:1 D30:1)
+(connect D13:1 D31:1)))
 (contextCarrier
+(wndOrigin 2 866)
+(wndRestoredOrigin 22 22)
+(wndRestoredExtent 1165 618)
+(wndState min)
 (active detail)
 (detail
 (extent 1165 618)
-(anchorPt 6 31)
+(anchorPt 50 20)
 (configuration
 (devCarrierFor 2
 (active icon)
@@ -6261,6 +6279,18 @@
 (extent 634 66)
 (editing enabled))
 (pinCenter 340 -10))
+(devCarrierFor 54
+(active open)
+(icon)
+(open
+(extent 194 56))
+(pinCenter 1150 610))
+(devCarrierFor 55
+(active open)
+(icon)
+(open
+(extent 274 76))
+(pinCenter 1110 440))
 (connect D4:0 D2:0
 (points 2 540 240 540 270))
 (connect D28:1 D2:1
@@ -6296,9 +6326,13 @@
 (connect D17:0 D25:0
 (points 2 840 745 840 781))
 (connect D21:1 D26:1
-(points 2 699 120 795 120)))
-(stackingOrder 7 8 10 9 2 16 11 6 18 3 12 21 4 26 15 24 20 22 17 13 25 29 14 19
-0 23 1 27 28 5))))
+(points 2 699 120 795 120))
+(connect D16:1 D30:1
+(points 2 979 610 1050 610))
+(connect D13:1 D31:1
+(points 4 649 610 670 610 670 440 970 440)))
+(stackingOrder 7 8 10 9 2 11 6 18 3 12 21 4 26 15 24 20 22 17 13 25 29 14 19 0
+23 1 27 28 5 16 30 31))))
 (context 9
 (properties
 (name "Save_Data")
@@ -15420,7 +15454,7 @@
 (name "who what where")
 (variableScope cont)
 (trigMode deg)
-(nextID 32)
+(nextID 41)
 (popupTitleText "UserObject")
 (popupMoveable 1))
 (deviceList
@@ -15667,29 +15701,6 @@
 (implementation
 (value Text
 (data  ""))))
-(device 23 DLISTBOX
-(properties
-(name "Technician")
-(variableScope cont)
-(popupTitle "Technician")
-(position 100 70))
-(interface
-(output 1
-(name "Text")
-(lock name constraints))
-(output 2
-(name "Index")
-(lock name constraints))
-(output 3
-(name "Cancel")
-(lock name constraints)))
-(implementation
-(itemList
-(numDims 1)
-(size 10)
-(data  [ "Ron Belko" "Thang Cao" "Harold Crane" "Kevin Down" "Estaban Flores"
-"Alex Galat" "Phil Sarver" "Steve Sarver" "Rich Wilburn" "Steve Applen" ]))
-(defaultValue "Steve Applen")))
 (device 24 FORMULA
 (properties
 (name "Tech Name")
@@ -15791,12 +15802,245 @@
 (data  "History"))
 (initValue Text
 (data  ""))))
+(device 36 FORMULA
+(properties
+(name "SetUpTechNamesTXT")
+(variableScope cont)
+(expr 1 "host_local + A + \"TechNames.txt\""))
+(interface
+(input 1
+(name "A")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 40 CONTEXT
+(properties
+(name "Technician Names")
+(variableScope cont)
+(trigMode deg)
+(nextID 8)
+(popupTitleText "UserObject")
+(popupMoveable 1))
+(interface
+(input 1
+(name "File Name")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(optional yes))
+(output 1
+(type data)
+(name "Data")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 FROMFILE
+(properties
+(variableScope cont)
+(transactions 1 "READ TEXT x STR ARRAY:*"))
+(interface
+(input 1
+(type control)
+(name "File Name")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "X")
+(optional yes)))
+(implementation
+(attr iopath file read
+"C:\\Users\\sapplen\\Documents\\Env_Sim\\Dev\\Loc_C\\VEE Setup Data\\TechNames.txt"
+(readTerm "\n")
+(fs "\r\n")
+(eol "\r\n")
+(multiField fullSyntax)
+(arrayFormat block))))
+(device 1 DLISTBOX
+(properties
+(name "Test Technician names list")
+(variableScope cont)
+(popupTitle "Select Test Technician Name")
+(position 199 361)
+(cancelText "New Test Technician?"))
+(interface
+(input 1
+(name "List Entries")
+(tag "List Entries")
+(requires
+(datatype Text)
+(shape "Array 1D"))
+(lock constraints)
+(optional yes)
+(buffer YES))
+(output 1
+(name "Text")
+(lock name constraints))
+(output 2
+(name "Index")
+(lock name constraints))
+(output 3
+(name "Cancel")
+(lock name constraints)))
+(implementation
+(itemList
+(numDims 1)
+(size 2)
+(data  [ "Steven Applen" "Foobar Snargfoosnar Bar" ]))
+(defaultValue "Steven Applen")))
+(device 2 INPUTDLG
+(properties
+(variableScope cont)
+(prompt "Enter name of new Test Technician")
+(valueConstraint "strLen(value)>0")
+(vErrorMessage "You must enter a name or press Quit.")
+(cancelText "Quit"))
+(interface
+(output 1
+(name "Value")
+(lock name constraints))
+(output 2
+(name "Cancel")
+(lock name constraints)))
+(implementation
+(inputType "text")))
+(device 3 TOFILE
+(properties
+(variableScope cont)
+(transactions 1 "WRITE TEXT a EOL"))
+(interface
+(input 1
+(name "A")
+(optional yes))
+(input 2
+(type control)
+(name "File Name")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes)))
+(implementation
+(attr iopath file append
+"C:\\Users\\sapplen\\Documents\\Env_Sim\\Dev\\Loc_C\\VEE Setup Data\\TechNames.txt"
+(readTerm "\n")
+(fs "\r\n")
+(eol "\r\n")
+(multiField fullSyntax)
+(arrayFormat block))))
+(device 5 JUNCTION
+(properties
+(name "JCT")
+(variableScope cont))
+(interface
+(input 1
+(name "A"))
+(input 2
+(name "B"))
+(output 1
+(name "Data"))))
+(device 7 EXITPROCESS
+(properties
+(variableScope cont)
+(code 0)))
 (configuration
-(connect D1:0 D0:0)
+(connect I1:1 D0:1)
+(connect D0:0 D1:0)
+(connect D0:1 D1:1)
+(connect D1:3 D2:0)
+(connect D2:0 D3:0)
+(connect D2:1 D3:1)
+(connect I1:1 D3:2)
+(connect D1:1 D4:1)
+(connect D2:1 D4:2)
+(connect D2:2 D5:0)
+(connect D4:1 O1:1)))
+(contextCarrier
+(wndOrigin 22 22)
+(wndState res)
+(active detail)
+(detail
+(extent 611 752)
+(anchorPt 29 2)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon)
+(open
+(extent 233 108))
+(terminals on)
+(pinCenter 250 140))
+(devCarrierFor 1
+(active open)
+(icon
+(extent 160 0))
+(open
+(extent 172 96))
+(terminals on)
+(pinCenter 245 290))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 252 107))
+(terminals on)
+(pinCenter 230 450))
+(devCarrierFor 3
+(active open)
+(icon)
+(open
+(extent 233 127))
+(terminals on)
+(pinCenter 250 630))
+(devCarrierFor 5
+(active icon)
+(icon
+(extent 26 25))
+(open)
+(terminals on)
+(pinCenter 520 340))
+(devCarrierFor 7
+(active open)
+(icon
+(iconImage "stop.icn"))
+(open
+(extent 65 31))
+(pinCenter 530 620))
+(connect I1:1 D0:1
+(points 4 -29 373 10 373 10 140 61 140))
+(connect D0:0 D1:0
+(points 2 230 196 230 221))
+(connect D0:1 D1:1
+(points 6 399 140 420 140 420 40 40 40 40 290 76 290))
+(connect D1:3 D2:0
+(points 5 383 320 390 320 390 360 240 360 240 376))
+(connect D2:0 D3:0
+(points 4 240 506 240 530 230 530 230 546))
+(connect D2:1 D3:1
+(points 10 408 420 440 420 440 530 250 530 250 520 220 520 220 530 40 530 40 600
+61 600))
+(connect I1:1 D3:2
+(points 4 -29 373 20 373 20 660 61 660))
+(connect D1:1 D4:1
+(points 4 383 260 400 260 400 330 504 330))
+(connect D2:1 D4:2
+(points 4 408 420 430 420 430 350 504 350))
+(connect D2:2 D5:0
+(points 3 408 480 530 480 530 584))
+(connect D4:1 O1:1
+(points 4 535 340 560 340 560 373 581 373)))
+(stackingOrder 3 4 0 5 2 1))))
+(configuration
+(connect D14:0 D0:0)
 (connect D0:0 D2:0)
 (connect D0:1 D2:1)
 (connect D2:1 D3:1)
-(connect D21:0 D4:0)
+(connect D20:0 D4:0)
 (connect D6:1 D5:1)
 (connect D4:0 D6:0)
 (connect D4:1 D6:1)
@@ -15804,27 +16048,32 @@
 (connect D9:1 D8:1)
 (connect D7:0 D9:0)
 (connect D7:1 D9:1)
-(connect D25:0 D10:0)
+(connect D24:0 D10:0)
 (connect D16:1 D10:1)
 (connect D11:1 D10:2)
 (connect D9:0 D11:0)
-(connect D23:0 D14:0)
+(connect D1:0 D14:0)
 (connect D15:1 D14:1)
-(connect D2:0 D20:0)
-(connect D20:0 D21:0)
-(connect D20:1 D21:1)
-(connect D10:0 D23:0)
-(connect D16:1 D23:1)
-(connect D24:1 D23:2)
-(connect D2:0 D24:0)
-(connect D28:1 D24:1)
-(connect D9:0 D25:0)
-(connect D16:1 D25:1)
-(connect D27:1 D25:2)
-(connect D9:0 D27:0))
+(connect D29:0 D20:0)
+(connect D29:1 D20:1)
+(connect D10:0 D22:0)
+(connect D16:1 D22:1)
+(connect D23:1 D22:2)
+(connect D2:0 D23:0)
+(connect D27:1 D23:1)
+(connect D9:0 D24:0)
+(connect D16:1 D24:1)
+(connect D26:1 D24:2)
+(connect D9:0 D26:0)
+(connect D14:0 D28:0)
+(connect D14:1 D28:1)
+(connect D2:0 D29:0)
+(connect D28:1 D29:1))
 (ShowOnExecPanel
 (relativeOrigin 195 126)))
 (contextCarrier
+(wndOrigin 142 142)
+(wndState res)
 (active detail)
 (panel
 (extent 291 207)
@@ -15846,7 +16095,7 @@
 (extent 47 22)))
 (detail
 (extent 789 529)
-(anchorPt 513 -450)
+(anchorPt 196 -49)
 (configuration
 (devCarrierFor 0
 (active open)
@@ -15862,7 +16111,7 @@
 (open
 (extent 47 22))
 (title off)
-(pinCenter 130 70))
+(pinCenter 130 -10))
 (devCarrierFor 2
 (active icon)
 (icon
@@ -15877,7 +16126,7 @@
 (extent 94 65))
 (open
 (extent 134 26))
-(pinCenter 310 250))
+(pinCenter 320 240))
 (devCarrierFor 5
 (active icon)
 (icon
@@ -15960,14 +16209,14 @@
 (open
 (extent 145 50))
 (terminals on)
-(pinCenter 340 1030))
+(pinCenter 130 70))
 (devCarrierFor 17
 (active open)
 (icon
 (extent 86 0))
 (open
 (extent 174 29))
-(pinCenter -380 640))
+(pinCenter -380 70))
 (devCarrierFor 18
 (active open)
 (icon
@@ -15996,14 +16245,6 @@
 (open
 (extent 199 115))
 (pinCenter 540 500))
-(devCarrierFor 23
-(active icon)
-(icon
-(extent 66 34))
-(open
-(extent 172 96))
-(terminals on)
-(pinCenter 130 290))
 (devCarrierFor 24
 (active icon)
 (icon
@@ -16062,15 +16303,29 @@
 (open
 (extent 174 29))
 (pinCenter -390 940))
-(connect D1:0 D0:0
-(points 2 130 83 130 116))
+(devCarrierFor 36
+(active icon)
+(icon
+(extent 134 15))
+(open
+(extent 205 50))
+(terminals on)
+(pinCenter -180 280))
+(devCarrierFor 40
+(active icon)
+(icon
+(extent 113 15))
+(terminals on)
+(pinCenter 130 280))
+(connect D14:0 D0:0
+(points 2 130 97 130 116))
 (connect D0:0 D2:0
 (points 2 130 206 130 230))
 (connect D0:1 D2:1
 (points 6 195 150 220 150 220 220 80 220 80 240 91 240))
 (connect D2:1 D3:1
-(points 4 169 240 190 240 190 250 240 250))
-(connect D21:0 D4:0
+(points 2 169 240 250 240))
+(connect D20:0 D4:0
 (points 2 130 340 130 365))
 (connect D6:1 D5:1
 (points 2 185 410 230 410))
@@ -16086,44 +16341,50 @@
 (points 2 130 499 130 510))
 (connect D7:1 D9:1
 (points 6 166 470 190 470 190 440 70 440 70 520 102 520))
-(connect D25:0 D10:0
+(connect D24:0 D10:0
 (points 2 340 700 340 741))
 (connect D16:1 D10:1
-(points 4 -291 560 140 560 140 770 175 770))
+(points 8 -291 560 -270 560 -270 570 140 570 140 650 150 650 150 770 175 770))
 (connect D11:1 D10:2
 (points 2 109 810 175 810))
 (connect D9:0 D11:0
 (points 4 130 530 130 750 -50 750 -50 756))
-(connect D23:0 D14:0
-(points 2 340 955 340 984))
+(connect D1:0 D14:0
+(points 2 130 3 130 24))
 (connect D15:1 D14:1
-(points 4 -291 640 -270 640 -270 1030 215 1030))
-(connect D2:0 D20:0
-(points 2 130 250 130 270))
-(connect D20:0 D21:0
-(points 2 130 309 130 320))
-(connect D20:1 D21:1
-(points 6 165 280 180 280 180 260 70 260 70 330 92 330))
-(connect D10:0 D23:0
+(points 2 -291 70 5 70))
+(connect D29:0 D20:0
+(points 2 130 290 130 320))
+(connect D29:1 D20:1
+(points 6 189 280 210 280 210 310 80 310 80 330 92 330))
+(connect D10:0 D22:0
 (points 2 340 820 340 867))
-(connect D16:1 D23:1
-(points 6 -291 560 140 560 140 770 150 770 150 900 180 900))
-(connect D24:1 D23:2
+(connect D16:1 D22:1
+(points 8 -291 560 -270 560 -270 570 140 570 140 650 150 650 150 900 180 900))
+(connect D23:1 D22:2
 (points 2 99 940 180 940))
-(connect D2:0 D24:0
-(points 8 130 250 130 240 120 240 120 250 -230 250 -230 870 -60 870 -60 886))
-(connect D28:1 D24:1
+(connect D2:0 D23:0
+(points 8 130 250 130 260 50 260 50 310 -230 310 -230 870 -60 870 -60 886))
+(connect D27:1 D23:1
 (points 2 -301 940 -220 940))
-(connect D9:0 D25:0
-(points 4 130 530 130 550 340 550 340 621))
-(connect D16:1 D25:1
-(points 4 -291 560 140 560 140 650 175 650))
-(connect D27:1 D25:2
+(connect D9:0 D24:0
+(points 4 130 530 130 560 340 560 340 621))
+(connect D16:1 D24:1
+(points 6 -291 560 -270 560 -270 570 140 570 140 650 175 650))
+(connect D26:1 D24:2
 (points 2 109 690 175 690))
-(connect D9:0 D27:0
-(points 4 130 530 130 550 -50 550 -50 636)))
-(stackingOrder 3 5 1 18 17 12 6 2 21 4 0 11 26 22 27 10 14 25 23 28 24 16 7 9 8
-19 13 20 15))))
+(connect D9:0 D26:0
+(points 4 130 530 130 550 -50 550 -50 636))
+(connect D14:0 D28:0
+(points 6 130 97 130 110 60 110 60 120 -180 120 -180 270))
+(connect D14:1 D28:1
+(points 6 255 70 280 70 280 -40 -270 -40 -270 280 -250 280))
+(connect D2:0 D29:0
+(points 2 130 250 130 270))
+(connect D28:1 D29:1
+(points 2 -111 280 71 280)))
+(stackingOrder 5 18 17 12 6 2 20 4 11 25 21 26 10 24 22 27 23 16 7 9 8 19 13 1
+15 14 28 3 0 29))))
 (device 82 CALL
 (properties
 (name "Call Get_Server_Data_Sheet")
@@ -18590,7 +18851,7 @@
 (lock name constraints)))
 (implementation
 (value Text
-(data  "  Ver 2.1"))
+(data  "  Ver 2.2"))
 (initValue Text
 (data  ""))))
 (device 133 CONFIRM25
@@ -18737,9 +18998,9 @@
 (connect D48:0 D49:0))
 (ShowOnExecPanel))
 (contextCarrier
-(wndOrigin 32 29)
+(wndOrigin 545 36)
 (wndState res)
-(active panel)
+(active detail)
 (panel
 (extent 313 579)
 (drawGrid "on")
@@ -18885,7 +19146,7 @@
 (extent 110 20)))
 (detail
 (extent 1789 753)
-(anchorPt -468 119)
+(anchorPt 255 442)
 (configuration
 (devCarrierFor 6
 (active open)
@@ -18903,7 +19164,7 @@
 (extent 199 115))
 (pinCenter 700 -180))
 (devCarrierFor 13
-(active open)
+(active icon)
 (icon
 (extent 225 51)
 (iconImage "io.icn"))
@@ -19380,8 +19641,8 @@
 (points 5 486 290 610 290 610 220 1120 220 1120 236))
 (connect D48:0 D49:0
 (points 4 1120 263 1120 280 1150 280 1150 300)))
-(stackingOrder 21 20 31 33 1 25 24 8 9 12 13 14 5 6 28 27 37 38 39 3 0 10 11 15
-16 17 18 19 34 7 2 36 22 41 44 4 35 26 23 29 32 47 46 30 48 43 40 45 42 49))
+(stackingOrder 21 20 31 33 1 25 24 8 9 12 13 14 5 6 27 37 38 39 3 0 10 11 15 16
+17 18 19 34 7 36 22 41 44 4 35 23 29 32 47 46 48 43 40 45 42 49 2 28 30 26))
 (numberFormats
 (realFormat standard)
 (realSigDigits 4)
