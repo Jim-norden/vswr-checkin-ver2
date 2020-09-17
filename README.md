@@ -1,5 +1,4 @@
 # vswr-checkin-ver2
  ATP 03550H, CS 03550-1D, hpVee, pictures.jpg and examples
 
-Mods made after talking with AUTHOR
-And attempts to push a fork.
+Legacy code updated with colaboration with original author.
